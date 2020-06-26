@@ -11,12 +11,14 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container" style="padding-top: 10rem; width: 990px;">
+   
+    <div class="container" style="padding-top: 5rem; width: 990px;">
+   
       <div class="row" style="width: fit-content;height: 100px;text-align: center;padding-left: 10rem;">
         <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 4rem;">Welcome, <span style="font-size: 2rem;"> NameOfTeacher</span></h1>
       </div>
       <hr>
-        <div class="row mt-5">
+        <div class="row mt-5 mb-5">
             <div class="col-md-6">
                 <button type="button" class="btn btn-warning btn-lg btn-block" style="height: 10em;width: 20em;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 1.4rem;">Generate QR-Code</button>
             </div>
@@ -24,6 +26,13 @@
                 <button type="button" class="btn btn-info btn-lg btn-block" style="height: 10em;width: 20em;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 1.4rem;">Dashboard</button>
             </div>
         </div>
+        <hr>
+        <div class="row mt-5" style="margin-left: 35%;margin-right: 35%;">
+          {% if request.user.is_authenticated %}
+            <button class="btn btn-danger btn-sm btn-block"><a href="{% url 'account_logout'%}" class="nav-link" style="color:aliceblue">Sign out</a></button> 
+          {% endif %}
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->

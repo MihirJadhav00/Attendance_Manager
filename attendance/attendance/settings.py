@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,13 +41,13 @@ INSTALLED_APPS = [
     'generateQR',
     'dashboard',
     #AllAuth apps
-    # 'django.contrib.sites',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'crispy_forms',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
 ]
-# SITE_ID = 1
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,11 +77,11 @@ TEMPLATES = [
     },
 ]
 
-# #Django all-auth settings
-# AUTHENTICATION_BACKENDS = [
-#     'django.contrib.auth.backends.ModelBackend',
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# ]
+#Django all-auth settings
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 WSGI_APPLICATION = 'attendance.wsgi.application'
 
@@ -129,6 +129,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 

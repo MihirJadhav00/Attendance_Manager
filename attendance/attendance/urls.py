@@ -19,8 +19,8 @@ from django.views.generic.base import TemplateView # new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('accounts/', include('allauth.urls')),
-    path('option/', TemplateView.as_view(template_name='index.html'), name='index'), # new
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', TemplateView.as_view(template_name='index.html'), name='index'), # new
     path('dashboard/',include('dashboard.urls')),
 ]
 
