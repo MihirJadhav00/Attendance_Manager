@@ -3,4 +3,6 @@ from . views import DashboardView
 
 urlpatterns = [
     path('', DashboardView, name='dashboard'),
+    
+
 ]

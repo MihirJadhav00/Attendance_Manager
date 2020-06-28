@@ -22,5 +22,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', TemplateView.as_view(template_name='index.html'), name='index'), # new
     path('dashboard/',include('dashboard.urls')),
+    path('accounts/profile/generateQR/',include('generateQR.urls')),
 ]
 
