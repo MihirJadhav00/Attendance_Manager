@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.views.generic.base import TemplateView # new
+from .views import HomePage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('accounts/profile/', TemplateView.as_view(template_name='index.html'), name='index'), # new
+    path('accounts/profile/',HomePage, name='index'), # new
     path('dashboard/',include('dashboard.urls')),
     path('accounts/profile/generateQR/',include('generateQR.urls')),
 ]

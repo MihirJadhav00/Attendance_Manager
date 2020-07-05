@@ -8,12 +8,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <style>
+      #qrcode{
+        height: 100vh;
+        width: auto;
+      }
+    </style>
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body style="padding-left: 26%;">
    
-        <img src="{% static 'qrcode_images/test.png' %}" alt="">
+        <img id="qrcode" src="{% static 'qrcode_images/test.png' %}" alt="">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -23,7 +28,8 @@
     <script type="text/javascript">
       setTimeout(function() {
           window.location.href = "../../../logout";
-      }, 45000);
+      }, 45000);  
+   
   </script>
   </body>
 </html>
